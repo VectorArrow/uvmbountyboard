@@ -1,5 +1,6 @@
 <?php include('parts/head.php'); ?>
 <body>
+<?php require_once('parts/nav.php'); ?>
 <main>
 <?php   
 	$whitelisted = true;
@@ -12,12 +13,11 @@
 		//$query = rtrim(file_get_contents($number . '.sql')); //prepare the query
 		$query = rtrim($query,';'); //remove semicolon (alternatively, set allow semi to true in bob's function)
 ?>
-<p>
-	<?php 
-		$counts = countify($query);
-		$results = $thisDatabaseReader->select($query, "", $counts['where'], $counts['condition'], $counts['quote'], $counts['symbol'], false, false, true);//running     capitalized code so that table headers aren't chopped oddly if they aren't given aliases
-	?>
-	<ul class='items-list'>
+<?php 
+	$counts = countify($query);
+	$results = $thisDatabaseReader->select($query, "", $counts['where'], $counts['condition'], $counts['quote'], $counts['symbol'], false, false, true);//running     capitalized code so that table headers aren't chopped oddly if they aren't given aliases
+?>
+<ul class='items-list'>
 	<?php foreach ($results as $row){?>
 		<li class='item'>
 			<h3 class='name title'><?php echo $row['name']; ?></h3>
@@ -26,8 +26,7 @@
 			<p class='description'><?php echo $row['description'] ?></p>
 		</li>
 	<?php } ?>
-	</ul>
-</p>
+</ul>
 <?php else: ?>
 <p>Sorry, your query has failed basic security checks.</p>
 <?php endif; ?>

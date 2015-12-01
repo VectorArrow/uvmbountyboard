@@ -1,9 +1,36 @@
-body{
+* {
 	margin:0;
+        padding:0;
+}
+body{
 	font-family: 'Oxygen', sans-serif;
 	display:flex;
-	flex-flow:row;
+	flex-flow:column;
 	justify-content:space-between;
 	font-size:21px;
 }
-
+nav.main ul{
+	padding:10px;
+	display:flex;
+	flex-flow:row;
+	list-style:none;
+	max-width:1200px;
+	margin:auto;
+}
+nav.main li{
+	padding:10px;
+}
+ul.items-list {
+	flex:1;
+	list-style:none;
+	flex-flow: row wrap;
+	justify-content:row wrap;
+	display:flex;
+	padding:10px;
+	max-width:1200px;
+	margin:auto;
+}
+ul.items-list li.item {
+	padding:10px;
+	max-width:30%;
+}
