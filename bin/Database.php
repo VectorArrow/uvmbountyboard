@@ -45,7 +45,7 @@ class Database {
     }
 
     private function connect($dbUserName, $whichPass, $dbName) {
-        require("pass.php");
+        require("../bin/pass.php");
 
         $debugMe = false;
 
