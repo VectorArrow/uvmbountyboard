@@ -4,7 +4,7 @@
 <main>
 <?php   
 	$whitelisted = true;
-	$query = 'SELECT * from Items WHERE status<>"closed"';
+	$query = 'SELECT * from Items WHERE username="'.$username.'"';
 	if ($whitelisted):
 	include('parts/grunt_work.php');
 ?>
@@ -12,10 +12,8 @@
 	<?php foreach ($results as $row){?>
 		<article class='item'>
 			<h3 class='name title'><a href='item.php?id=<?php echo $row["id"];?>'><?php echo $row['name']; ?></a></h3>
-			<div class='sub'> 
-				<div class='location'><?php echo $row['location']; ?></div>
-				<div class='dateLost'><?php echo $row['dateLost'] ?></div>
-			</div>
+			<div class='location'><?php echo $row['location']; ?></div>
+			<div class='dateLost'><?php echo $row['dateLost'] ?></div>
 			<p class='description'><?php echo $row['description'] ?></p>
 		</article>
 	<?php } ?>

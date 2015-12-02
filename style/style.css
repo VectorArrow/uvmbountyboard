@@ -1,4 +1,4 @@
-* {
+*{
 	margin:0;
         padding:0;
 }
@@ -9,19 +9,47 @@ body{
 	justify-content:space-between;
 	font-size:21px;
 }
-nav.main ul{
+/** header stuff */
+header{
 	padding:10px;
+	padding-bottom:0;
+	color:rgb(88,90,92);
+}
+header .center-wrap{
 	display:flex;
-	flex-flow:row;
-	list-style:none;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	width:100%;
 	max-width:1200px;
 	margin:auto;
 }
-nav.main li{
-	padding:10px;
+header h1{
+	padding:0 10px;
+	display:inline-block;
+	font-size:27px;
 }
-ul.items-list {
-	flex:1;
+header nav.main ul{
+	padding:10px 0;
+	display:flex;
+	flex-flow:row;
+	list-style:none;
+}
+header nav.main a{
+	padding:10px;
+	color:rgb(150,83,74);
+	text-decoration: none;
+}
+/** content stuff */
+.content{
+	padding:10px;
+	max-width:1200px;
+	margin:auto;
+	display:flex;
+	flex-flow:column;
+}
+/** loast and found item list stuff */
+.items-list {
 	list-style:none;
 	flex-flow: row wrap;
 	justify-content:row wrap;
@@ -30,7 +58,24 @@ ul.items-list {
 	max-width:1200px;
 	margin:auto;
 }
-ul.items-list li.item {
+.items-list .item {
 	padding:10px;
 	max-width:30%;
+}
+.items-list .item .sub {
+	font-size:.8em;
+    	display: flex;
+    	flex-flow: row wrap;
+    	justify-content: space-between;
+}
+/** general form stuff */
+form fieldset{
+	border:none;
+}
+form p{
+	padding:5px;
+}
+form p > label {
+	font-size:.8em;
+	display:block;
 }
