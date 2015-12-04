@@ -6,7 +6,7 @@ function countify($code){
 		$conditions = array(' AND ', ' OR ', ' XOR ', ' NOT ', ' && ', ' || ', ' ! ');
 		$counts['condition'] = 0;
 		foreach($conditions as $condition){$counts['condition'] += substr_count($code,$condition);} //substr_count doesn't accept arrays... boo
-		$quotes = ['"', "'", '#34', '#39', '&QUOT'];
+		$quotes = array('"', "'", '#34', '#39', '&QUOT');
 		$counts['quote'] = 0;
 		foreach($quotes as $quote){$counts['quote'] += substr_count($code,$quote);} 
 		$counts['symbol'] = substr_count($code,'<') +  substr_count($code,'>');
