@@ -216,7 +216,7 @@ class Database {
     // of query.     
     public function insert($query, $values = "", $wheres = 0, $conditions = 0, $quotes = 0, $symbols = 0, $spacesAllowed = false, $semiColonAllowed = false) {
         $success = false;
-	echo '1';
+	
         if ($wheres != $this->countWhere($query)) {
             return $success;
         }
@@ -244,7 +244,7 @@ class Database {
         } else {
             $success = $statement->execute();
         }
-	echo '9';
+
         $statement->closeCursor();
 
         return $success;
