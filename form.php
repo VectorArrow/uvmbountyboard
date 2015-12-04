@@ -3,7 +3,7 @@
 <?php require_once('parts/header.php'); ?>
 <main>
 <section class='content'>
-<form action='' method='post'>
+<form action='submitted.php' method='post'>
 	<h2>Submit a Lost or Found Item</h2>
 	<fieldset>
 		<p>
