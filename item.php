@@ -13,7 +13,7 @@
 <section class='content'>
 <?php foreach ($results as $row){?>
 	<article class='item'>
-		<h3 class='name title'><a href='item.php?id=<?php echo $row["id"];?>'><?php echo $row['name']; ?></a></h3>
+		<h3 class='name title'><?php echo $row['name']; ?></h3>
 		<div class='location'><?php echo $row['location']; ?></div>
 		<div class='dateLost'><?php echo $row['dateLost'] ?></div>
 		<p class='description'><?php echo $row['description'] ?></p>
