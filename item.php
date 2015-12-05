@@ -18,7 +18,7 @@
 		<div class='dateLost'><?php echo $row['dateLost'] ?></div>
 		<p class='description'><?php echo $row['description'] ?></p>
 		<?php if ($currentUser == $row['username']){
-			print "<p class='edit'><a href='index.php'>Edit</a></p>";}  ?>
+			print "<p class='edit'><a href='editItem.php?id=$id'>Edit</a></p>";}  ?>
 
 	</article>
 	<?php } ?>
