@@ -2,7 +2,7 @@
 <body>
 <?php require_once('parts/header.php'); ?>
 <main>
-<?php   
+<?php
 	$whitelisted = true;
 	$id = preg_replace("/[^0-9]/","",htmlspecialchars($_GET["id"]));
 	if ($id === "") $whitelisted = false;
@@ -17,6 +17,9 @@
 		<div class='location'><?php echo $row['location']; ?></div>
 		<div class='dateLost'><?php echo $row['dateLost'] ?></div>
 		<p class='description'><?php echo $row['description'] ?></p>
+		<?php if ($username = $row['username']){
+			print "<p class='edit'><a href='index.php'>Edit</a></p>";}  ?>
+
 	</article>
 	<?php } ?>
 </section>
