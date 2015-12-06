@@ -14,7 +14,7 @@
 			<a href='item.php?id=<?php echo $row["id"];?>'>
 				<?php 
 				$imagePath = 'uploads/'.$username."/".$row['id']."/".$row['image'];
-				if (file_exists($imagePath)): 
+				if (file_exists($imagePath) && !empty($row['image'])): 
 				?>
 				<div class='item-image' style='background-image:url(<?php echo $imagePath; ?>);'></div>
 				<?php endif; ?>

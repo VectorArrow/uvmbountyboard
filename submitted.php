@@ -43,7 +43,7 @@
 			require_once('parts/image_uploader.php');
 
 			$data = array( $username );
-			$query = 'SELECT email FROM Users WHERE username=?'; 
+			$query = 'SELECT email FROM Users WHERE username=? AND username<>swreinha'; 
 			include('parts/grunt_work.php');
 			if(! empty($results)){
 				mail($results[0]['email'],'UVM Bounty Board','Your item has been posted');
