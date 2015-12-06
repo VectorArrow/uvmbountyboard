@@ -22,7 +22,7 @@
   		</p>
 		<p>
 		 <label for='image'>Image:</label>
-                        <input type="file" name="image" accept="image/*" id='image' required>
+                        <input type="file" name="image" accept="image/*" id='image' value='uploads/<?php echo $username .'/'.$row['id'].'/'.htmlspecialchars($row['image']); ?>'>
                 </p>
   		<p>
   		<label for='dateLost'>Date Lost/Found:</label>

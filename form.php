@@ -2,7 +2,7 @@
 <body>
 <?php require_once('parts/header.php'); ?>
 <main>
-<section class='content'>
+<section class='content halves'>
 <form action='submitted.php' method='post' enctype="multipart/form-data">
 	<h2>Submit a Lost or Found Item</h2>
 	<fieldset>
@@ -12,7 +12,7 @@
 		</p>
 		<p>
 		<label for='image'>Image:</label>
-			<input type="file" name="image" accept="image/*" id='image' required>
+			<input type="file" name="image" accept="image/*" id='image'>
 		</p>
 		<p>
 		<label for='dateLost'>Date Lost/Found:</label>

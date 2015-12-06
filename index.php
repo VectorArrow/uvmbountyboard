@@ -24,6 +24,7 @@
 					<div class='dateLost'><?php echo $row['dateLost'] ?></div>
 				</div>
 				<p class='description'><?php echo $row['description'] ?></p>
+				<?php echo $row['category']; ?>
 			</a>
 		</article>
 	<?php } ?>

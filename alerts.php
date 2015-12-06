@@ -8,7 +8,15 @@
 	if ($whitelisted):
 	include('parts/grunt_work.php');
 ?>
-<section class='items-list content'>
+<section class='halves content'>
+	<form action='alerts.php' method='post' enctype="multipart/form-data">
+        <h2>Create an alert</h2>
+        <fieldset>
+
+        </fieldset>
+        <button type="submit" name='submit' value='new_alert'>Submit</button>
+	</form>
+
 	<?php foreach ($results as $row){?>
 		<article class='item'>
 			<?php 
