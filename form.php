@@ -3,7 +3,7 @@
 <?php require_once('parts/header.php'); ?>
 <main>
 <section class='content'>
-<form action='submitted.php' method='post'>
+<form action='submitted.php' method='post' enctype="multipart/form-data">
 	<h2>Submit a Lost or Found Item</h2>
 	<fieldset>
 		<p>
@@ -11,8 +11,12 @@
 			<input type='text' name='name'>
 		</p>
 		<p>
+		<label for='image'>Image:</label>
+			<input type="file" name="image" accept="image/*" id='image'>
+		</p>
+		<p>
 		<label for='dateLost'>Date Lost/Found:</label>
-			<input type='date' name='dateLost'>
+			<input type='date' name='dateLost' id='dateLost'>
 		</p>
 		<p>	
 		<label for='location'>Location:</label>
@@ -49,7 +53,7 @@
                         </fieldset>
                 </p>
 </fieldset>
-	<input type="submit">
+	<button type="submit" name='submit' value='new_post'>Submit</button>
 </form>
 </section>
 </main>

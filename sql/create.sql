@@ -32,6 +32,7 @@ CREATE TABLE Items(
 	description varchar(255),
 	location varchar(255),
 	status varchar(7),
+	image varchar(255),
 	PRIMARY KEY (id),
 	FOREIGN KEY (username) REFERENCES Users (username));
 CREATE TABLE Comments(

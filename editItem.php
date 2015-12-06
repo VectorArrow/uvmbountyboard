@@ -15,18 +15,18 @@
   <form action='submitted.php' method='post'>
   	<h2>Submit a Lost or Found Item</h2>
   	<fieldset>
+		 <input type="hidden" name='id' value="<?php echo htmlspecialchars($row['id']); ?>">
   		<p>
   		<label for='name'>Item Name:</label>
-  			<input type='text' name='name' value='<?php echo $row['name']; ?>'>
-        <input type="hidden" name='id' value="<?php echo $row['id']; ?>"
+  			<input type='text' name='name' value='<?php echo htmlspecialchars($row['name']); ?>'>
   		</p>
   		<p>
   		<label for='dateLost'>Date Lost/Found:</label>
-  			<input type='date' name='dateLost' value='<?php echo $row['dateLost']; ?>'>
+  			<input type='date' name='dateLost' value='<?php echo htmlspecialchars($row['dateLost']); ?>'>
   		</p>
   		<p>
   		<label for='location'>Location:</label>
-  			<select id='location' name='location' value=' <?php echo $row['location']; ?>'>
+  			<select id='location' name='location' value=' <?php echo htmlspecialchars($row['location']); ?>'>
   				<option value='Athletic-Campus'>Athletic Campus</option>
   				<option value='Centennial-Field'>Centennial Field</option>
   				<option value='Central-Campus'>Central Campus</option>
@@ -40,7 +40,7 @@
   		</p>
   		<p>
   		<label for='description'>Description:</label>
-  			<textarea id='description' rows='8' cols='50' name='description' value='<?php echo $row['description']; ?>'></textarea>
+  			<textarea id='description' rows='8' cols='50' name='description'><?php echo htmlspecialchars($row['description']); ?></textarea>
   		</p>
   		<p>
   		<label for='category'>Categories:</label>
@@ -60,7 +60,7 @@
                           </fieldset>
                   </p>
   </fieldset>
-  	<input type="submit">
+	<button type='submit' name='submit' value='edit_item'>Submit</p>
   </form>
   	<?php } ?>
   </section>
