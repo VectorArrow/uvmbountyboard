@@ -14,11 +14,16 @@
 		       		htmlentities($_POST['description']),
 			    	htmlentities($_POST['location']),
 				htmlentities($_POST['status']),
-				htmlentities($_POST['id'])
+				htmlentities($_POST['dateLost']),
+				htmlentities($_FILES["image"]["name"]),
+				htmlentities($_POST['id']),
+
 		       	);
-			$query = 'UPDATE Items SET name=?,category=?,description=?,location=?,status=? WHERE id=?';
+			$query = 'UPDATE Items SET name=?,category=?,description=?,location=?,status=?,dateLost=?,image=? WHERE id=?';
 			require_once('parts/update_grunt_work.php');
-			$primaryKey = $_POST['id'];?>
+			$primaryKey = $_POST['id'];	
+			require_once('parts/image_uploader.php'); 
+?>
 			<h3>Your item has been edited.</h3><p>You can view it <a href='item.php?id=<?php echo $primaryKey ?>'>here</a>.</p>
 		<?php else:
 			$data = array(

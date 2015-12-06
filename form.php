@@ -8,11 +8,11 @@
 	<fieldset>
 		<p>
 		<label for='name'>Item Name:</label>
-			<input type='text' name='name'>
+			<input type='text' name='name' required>
 		</p>
 		<p>
 		<label for='image'>Image:</label>
-			<input type="file" name="image" accept="image/*" id='image'>
+			<input type="file" name="image" accept="image/*" id='image' required>
 		</p>
 		<p>
 		<label for='dateLost'>Date Lost/Found:</label>
@@ -34,7 +34,7 @@
 		</p>
 		<p>
 		<label for='description'>Description:</label>
-			<textarea id='description' rows='8' cols='50' name='description'></textarea>
+			<textarea id='description' rows='8' cols='50' name='description' required></textarea>
 		</p>
 		<p>
 		<label for='category'>Categories:</label>

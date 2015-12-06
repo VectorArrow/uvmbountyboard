@@ -12,17 +12,21 @@
 ?>
 <section class='content'>
   <?php foreach ($results as $row){?>
-  <form action='submitted.php' method='post'>
-  	<h2>Submit a Lost or Found Item</h2>
+  <form action='submitted.php' method='post'  enctype="multipart/form-data">
+  	<h2>Edit your item</h2>
   	<fieldset>
-		 <input type="hidden" name='id' value="<?php echo htmlspecialchars($row['id']); ?>">
+		 <input type="hidden" name='id' value="<?php echo htmlspecialchars($row['id']); ?>" required>
   		<p>
   		<label for='name'>Item Name:</label>
-  			<input type='text' name='name' value='<?php echo htmlspecialchars($row['name']); ?>'>
+  			<input type='text' name='name' value='<?php echo htmlspecialchars($row['name']); ?>' required>
   		</p>
+		<p>
+		 <label for='image'>Image:</label>
+                        <input type="file" name="image" accept="image/*" id='image' required>
+                </p>
   		<p>
   		<label for='dateLost'>Date Lost/Found:</label>
-  			<input type='date' name='dateLost' value='<?php echo htmlspecialchars($row['dateLost']); ?>'>
+  			<input type='date' name='dateLost' value='<?php echo htmlspecialchars($row['dateLost']); ?>' required>
   		</p>
   		<p>
   		<label for='location'>Location:</label>
@@ -40,7 +44,7 @@
   		</p>
   		<p>
   		<label for='description'>Description:</label>
-  			<textarea id='description' rows='8' cols='50' name='description'><?php echo htmlspecialchars($row['description']); ?></textarea>
+  			<textarea id='description' rows='8' cols='50' name='description' required><?php echo htmlspecialchars($row['description']); ?></textarea>
   		</p>
   		<p>
   		<label for='category'>Categories:</label>

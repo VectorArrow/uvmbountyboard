@@ -1,12 +1,9 @@
 <?php //Modified code from W3 School
-echo $username;
 $target_dir = 'uploads/'.$username.'/'.$primaryKey.'/';
-echo $target_dir;
 if (!file_exists($target_dir)) {
     mkdir($target_dir, 0755, true);
 }
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
-echo $target_file;
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image

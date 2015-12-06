@@ -80,6 +80,9 @@ header nav.main a{
     	flex-flow: row wrap;
     	justify-content: space-between;
 }
+.items-list .item .sub .location{
+	padding-right:20px;
+}
 .items-list .item .item-image {
     	width: 100%;
     	height: 150px;
