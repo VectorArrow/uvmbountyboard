@@ -46,6 +46,7 @@
 				<label><input type='checkbox' name='category' value='Other'>Other</label>
 			</fieldset>			
 		</p>
+		<p>
 		<label for='status'>Status:</label>
                         <fieldset id='status'>
                                 <label><input type='radio' name='status' value='Lost' checked>Lost</label>
