@@ -13,7 +13,9 @@ body{
 header{
 	padding:10px;
 	padding-bottom:0;
-	color:rgb(88,90,92);
+	color:white;
+	background: #5A8860;
+	box-shadow: 0 3px 2px -2px rgba(0,0,0,0.4);
 }
 header .center-wrap{
 	display:flex;
@@ -37,7 +39,7 @@ header nav.main ul{
 }
 header nav.main a{
 	padding:10px;
-	color:rgb(150,83,74);
+	color:white;
 	text-decoration: none;
 }
 /** content stuff */
@@ -59,8 +61,18 @@ header nav.main a{
 	
 }
 .items-list .item {
-	padding:10px;
+	margin:10px;
 	max-width:30%;
+	background:#5A8860;
+	color: #464748;
+	box-shadow: 4px 4px 10px -2px rgba(0,0,0,0.1);
+}
+.items-list .item .title, .items-list .sub{
+	padding:0 10px;
+}
+.items-list .item .title a{
+	color: #FFFFFF;
+    	text-decoration:none;
 }
 .items-list .item .sub {
 	font-size:.8em;
@@ -73,6 +85,9 @@ header nav.main a{
     	height: 150px;
     	background-repeat:no-repeat;
     	background-size: cover;
+}
+.items-list .description{
+	padding:10px;
 }
 /** general form stuff */
 form fieldset{
