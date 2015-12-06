@@ -2,7 +2,7 @@
 <body>
 <?php require_once('parts/header.php'); ?>
 <main>
-<?php   
+<?php
 
 	$whitelisted = true;
 	$query = 'SELECT * from Users WHERE username="'.$username.'"';
@@ -13,11 +13,13 @@
 	<?php foreach ($results as $row){?>
 		<article class='person'>
 			<h3 class='name title'><?php echo $row['username']; ?></h3>
-			<div class='sub'> 
+			<div class='sub'>
 				<div class='dateCreated'><?php echo $row['dateCreated']; ?></div>
 			</div>
 			<p class='nickname'><?php echo $row['nickname']; ?></p>
 			<p class='email'><?php echo $row['email']; ?></p>
+			<?php if ($currentUser == $row['username']):
+			print "<p class='edit'><a href='editProfile.php'>Edit</a></p>"; endif;?>
 		</article>
 	<?php } ?>
 </section>
