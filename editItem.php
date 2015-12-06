@@ -8,7 +8,7 @@
   if ($id === "") $whitelisted = false;
   if ($whitelisted):
   $query = 'SELECT * from Items WHERE id='.$id;
-  include('parts/grunt_work.php');
+  include('parts/grunt_work.php'); endif;
 ?>
 <section class='content'>
   <?php foreach ($results as $row){?>
@@ -17,15 +17,15 @@
   	<fieldset>
   		<p>
   		<label for='name'>Item Name:</label>
-  			<input type='text' name='name' >
+  			<input type='text' name='name' value='<?php echo $row['name']; ?>'>
   		</p>
   		<p>
   		<label for='dateLost'>Date Lost/Found:</label>
-  			<input type='date' name='dateLost'>
+  			<input type='date' name='dateLost' value='<?php echo $row['dateLost']; ?>'>
   		</p>
   		<p>
   		<label for='location'>Location:</label>
-  			<select id='location' name='location'>
+  			<select id='location' name='location' value=' <?php echo $row['location']; ?>'>
   				<option value='Athletic-Campus'>Athletic Campus</option>
   				<option value='Centennial-Field'>Centennial Field</option>
   				<option value='Central-Campus'>Central Campus</option>
@@ -39,7 +39,7 @@
   		</p>
   		<p>
   		<label for='description'>Description:</label>
-  			<textarea id='description' rows='8' cols='50' name='description'></textarea>
+  			<textarea id='description' rows='8' cols='50' name='description' value='<?php echo $row['description']; ?>'></textarea>
   		</p>
   		<p>
   		<label for='category'>Categories:</label>
