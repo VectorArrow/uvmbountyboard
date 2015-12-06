@@ -12,12 +12,13 @@
 ?>
 <section class='content'>
   <?php foreach ($results as $row){?>
-  <form action='updated.php' method='post'>
+  <form action='submitted.php' method='post'>
   	<h2>Submit a Lost or Found Item</h2>
   	<fieldset>
   		<p>
   		<label for='name'>Item Name:</label>
   			<input type='text' name='name' value='<?php echo $row['name']; ?>'>
+        <input type="hidden" name='id' value="<?php echo $row['id']; ?>"
   		</p>
   		<p>
   		<label for='dateLost'>Date Lost/Found:</label>
@@ -55,6 +56,7 @@
                           <fieldset id='status'>
                                   <label><input type='radio' name='status' value='Lost' checked>Lost</label>
                                   <label><input type='radio' name='status' value='Found'>Found</label>
+                                  <label><input type='radio' name='status' value='Closed'>Closed</label>
                           </fieldset>
                   </p>
   </fieldset>
