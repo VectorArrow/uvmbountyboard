@@ -2,7 +2,7 @@
 $pages = array(
 	'index'=> 'Home',
 	'form' => 'Submit',
-	'manage' => 'Manage Items',
+	'manage' => 'Your Items',
 	'profile' => 'Profile',
 	'alerts' => 'Alerts'
 ); 

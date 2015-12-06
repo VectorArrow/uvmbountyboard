@@ -3,19 +3,25 @@
         padding:0;
 }
 body{
-	font-family: 'Oxygen', sans-serif;
+	font-family: 'Cabin';
 	display:flex;
 	flex-flow:column;
 	justify-content:space-between;
 	font-size:21px;
+	color:#515152;
+	background: url(cork.png);
+}
+h1, h2, h3, h4{
+	font-family:'Josefin Sans';
 }
 /** header stuff */
 header{
 	padding:10px;
 	padding-bottom:0;
 	color:white;
-	background: #5A8860;
+	background: url(wood.png);
 	box-shadow: 0 3px 2px -2px rgba(0,0,0,0.4);
+	font-family:'Josefin Sans';
 }
 header .center-wrap{
 	display:flex;
@@ -58,27 +64,37 @@ header nav.main a{
 	padding:10px;
 	max-width:1200px;
 	margin:auto;
-	
+	align-items:flex-end;
 }
 .items-list .item {
 	margin:10px;
 	max-width:30%;
-	background:#5A8860;
-	color: #464748;
-	box-shadow: 4px 4px 10px -2px rgba(0,0,0,0.1);
+	background:white;
+	transition: transform .5s;
+	box-shadow: 4px 4px 10px -2px rgba(0,0,0,0.3);
 }
-.items-list .item .title, .items-list .sub{
-	padding:0 10px;
+.items-list .item a{
+        color: inherit;
+        text-decoration:none;
+	display:block;
+	transition:transform 1s;
 }
-.items-list .item .title a{
-	color: #FFFFFF;
-    	text-decoration:none;
+.items-list .item .title{
+	font-family:Josefin Sans;
+	padding:10px 10px 0 10px;
+	color: #B14242;
+	transition:color 1s;
+}
+.items-list .item a:hover .title{
+        color: red;
 }
 .items-list .item .sub {
 	font-size:.8em;
     	display: flex;
     	flex-flow: row wrap;
     	justify-content: space-between;
+	border-bottom: #3A563D solid 1px;
+	padding:0 10px 5px 10px;
 }
 .items-list .item .sub .location{
 	padding-right:20px;
@@ -103,3 +119,21 @@ form p > label {
 	font-size:.8em;
 	display:block;
 }
+/** rotate classes */
+.rotate1{
+        transform: rotate(-1deg);
+}
+.rotate2{
+        transform: rotate(1deg);
+}
+.rotate0:hover{
+	transform: rotate(-1deg);
+}
+.rotate1:hover{
+        transform: rotate(1deg);
+}
+.rotate2:hover{
+        transform: rotate(0deg);
+}
+
+
