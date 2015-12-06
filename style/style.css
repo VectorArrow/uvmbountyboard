@@ -83,10 +83,6 @@ header nav.main a{
 	font-family:Josefin Sans;
 	padding:10px 10px 0 10px;
 	color: #B14242;
-	transition:color 1s;
-}
-.items-list .item a:hover .title{
-        color: red;
 }
 .items-list .item .sub {
 	font-size:.8em;
