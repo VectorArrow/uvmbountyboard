@@ -38,9 +38,17 @@
 				htmlentities($_FILES["image"]["name"]),
 	          	);
 			$query = 'INSERT INTO Items (username,name,dateCreated,dateLost,category,description,location,status,image) VALUES (?,?,?,?,?,?,?,?,?)';
-			require_once('parts/submit_grunt_work.php');
+			include('parts/submit_grunt_work.php');
 			$primaryKey = $thisDatabaseWriter->lastInsert();
-			require_once('parts/image_uploader.php'); 
+			require_once('parts/image_uploader.php');
+
+			$data = array( $username );
+			$query = 'SELECT email FROM Users WHERE username=?'; 
+			include('parts/grunt_work.php');
+			if(! empty($results)){
+				mail($results[0]['email'],'UVM Bounty Board','Your item has been posted');
+			}
+
 ?>
 		<h3>Your item has been submitted.</h3><p>You can view it <a href='item.php?id=<?php echo $primaryKey ?>'>here</a>.</p>
 	<?php endif; ?>
