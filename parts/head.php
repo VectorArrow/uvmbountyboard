@@ -2,7 +2,7 @@
 <html lang=en>
 <head>
         <meta charset=utf-8>
-        <title>CS148 Assignment3.0</title>
+        <title>UVM Bounty Board</title>
         <meta name="description" content="Homework Assignment 10.0 for CS148">
         <meta name="author" content="<?php echo get_current_user(); ?>">
 
