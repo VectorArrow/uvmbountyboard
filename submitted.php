@@ -7,21 +7,35 @@
 	$whitelisted = true;
 	if ($whitelisted):
 		if ($_POST['submit'] === 'edit_item' ):
-			$data = array(
-		               	htmlentities($_POST['name']),
-		               	htmlentities($_POST['category']),
-		       		htmlentities($_POST['description']),
-			    	htmlentities($_POST['location']),
-				htmlentities($_POST['status']),
-				htmlentities($_POST['dateLost']),
-				htmlentities($_FILES["image"]["name"]),
-				htmlentities($_POST['id']),
-
-		       	);
-			$query = 'UPDATE Items SET name=?,category=?,description=?,location=?,status=?,dateLost=?,image=? WHERE id=?';
+			if($_FILES["image"]["name"] === ''){
+				$data = array(
+			               	htmlentities($_POST['name']),
+			               	htmlentities($_POST['category']),
+			       		htmlentities($_POST['description']),
+			    		htmlentities($_POST['location']),
+					htmlentities($_POST['status']),
+					htmlentities($_POST['dateLost']),
+					htmlentities($_FILES["image"]["name"]),
+					htmlentities($_POST['id']),
+		       		);
+				$query = 'UPDATE Items SET name=?,category=?,description=?,location=?,status=?,dateLost=?,image=? WHERE id=?';
+			}else{
+				$data = array(
+                                        htmlentities($_POST['name']),
+                                        htmlentities($_POST['category']),
+                                        htmlentities($_POST['description']),
+                                        htmlentities($_POST['location']),
+                                        htmlentities($_POST['status']),
+                                        htmlentities($_POST['dateLost']),
+                                        htmlentities($_POST['id']),
+                                );
+                                $query = 'UPDATE Items SET name=?,category=?,description=?,location=?,status=?,dateLost=? WHERE id=?';
+			}
 			require_once('parts/update_grunt_work.php');
-			$primaryKey = $_POST['id'];	
-			require_once('parts/image_uploader.php'); 
+			$primaryKey = $_POST['id'];
+			if(!($_FILES["image"]["name"] === '')){	
+				require_once('parts/image_uploader.php'); 
+			}
 ?>
 			<h3>Your item has been edited.</h3><p>You can view it <a href='item.php?id=<?php echo $primaryKey ?>'>here</a>.</p>
 		<?php else:
