@@ -109,11 +109,41 @@ form fieldset{
 	border:none;
 }
 form p{
-	padding:5px;
+	padding:2px;
 }
 form p > label {
-	font-size:.8em;
 	display:block;
+}
+form button, form input, form textarea, form select{
+	font-size:.9em;
+	background:#fafafa;
+	padding: 2px 5px;
+	border:1px solid #ccc;
+    	font-family: Cabin;
+	color:#515152;
+    	border-radius:5px;
+}
+form input#image{
+	background:none;
+	border:none;
+}
+form label{
+	margin-right:10px;
+	font-size:.999999999em;
+}
+form label input{
+	margin-right:5px;
+}
+form button{
+	cursor:pointer;
+	padding:2px 10px;
+	border:none;
+	box-shadow:inset 0px 0px 0px #DEDEDE, 0px 2px 0px 0px #DEDEDE, 0px 2px 1px #BDBCBC;
+	transition:background .5s, box-shadow .5s;
+}
+form button:hover{
+	background:#BDF1B3;
+	box-shadow:inset 0px 0px 0px #BDF1B3, 0px 2px 0px 0px #7EAD74, 0px 2px 1px #BDBCBC;
 }
 /** rotate classes */
 .rotate1{

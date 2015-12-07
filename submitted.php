@@ -5,7 +5,6 @@
 <section class='content'>
 <?php
 	$whitelisted = true;
-	print_r($data);
 	if ($whitelisted):
 		if ($_POST['submit'] === 'edit_item' ):
 			$data = array(
