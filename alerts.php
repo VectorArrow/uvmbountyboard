@@ -26,7 +26,7 @@
 	$query = 'SELECT * from Alerts WHERE username=?';
 	include('parts/grunt_work.php');
 ?>
-<section class='halves content'>
+<section class='content'>
 	<form action='alerts.php' method='post' enctype="multipart/form-data">
         <h2>Create an alert for:</h2>
         <fieldset>
@@ -56,13 +56,22 @@
         </fieldset>
         <button type="submit" name='submit' value='new_alert'>Submit</button>
 	</form>
-
-	<?php foreach ($results as $row){?>
+</section>
+<section class='content'>
+	<h3>Current Alerts:</h3>
+	<section class='alert-list'>
+	<?php $num = 1; foreach ($results as $row){?>
 		<article class='alert'>
-			<div class='location'><?php echo $row['location']; ?></div>
-			<div class='keywords'><?php echo $row['keywords'] ?></div>
+			<h4>Alert <?php echo $num; ?></h4>
+			<p>Location:	
+				<div class='location'><?php echo $row['location']; ?></div>
+			</p>
+			<p>Categories:
+				<div class='keywords'><?php echo $row['keywords'] ?></div>
+			</p>
 		</article>
-	<?php } ?>
+	<?php $num++; } ?>
+	</section>
 </section>
 <?php endif; ?>
 </main>

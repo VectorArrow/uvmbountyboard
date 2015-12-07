@@ -82,7 +82,14 @@ header nav.main a{
 .items-list .item .title{
 	font-family:Josefin Sans;
 	padding:10px 10px 0 10px;
-	color: #B14242;
+}
+.items-list .item.Lost .title:before{
+	content:'Lost: ';
+	color:#B14242;
+}
+.items-list .item.Found .title:before{
+        content:'Found: ';
+        color:#3B9071;
 }
 .items-list .item .sub {
 	font-size:.8em;
@@ -103,6 +110,18 @@ header nav.main a{
 }
 .items-list .description{
 	padding:10px;
+}
+/** alert stuff */
+.alert-list{
+	display:flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+}
+.alert-list .alert{
+	background:white;
+	flex-flow: column wrap;
+	padding:5px;
+	margin:10px;
 }
 /** general form stuff */
 form fieldset{
