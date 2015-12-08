@@ -13,7 +13,7 @@
 		<article class='item rotate<?php echo rand(0,2); echo ' '.$row['status'];?>'>
 			<a href='item.php?id=<?php echo $row["id"];?>'>
 				<?php 
-				$imagePath = 'uploads/'.$username."/".$row['id']."/".$row['image'];
+				$imagePath = 'uploads/'.$row['username']."/".$row['id']."/".$row['image'];
 				if (file_exists($imagePath) && !empty($row['image'])): 
 				?>
 				<div class='item-image' style='background-image:url(<?php echo $imagePath; ?>);'></div>
