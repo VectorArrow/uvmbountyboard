@@ -17,7 +17,7 @@
 		<div class='location'><?php echo $row['location']; ?></div>
 		<div class='dateLost'><?php echo $row['dateLost'] ?></div>
 		<p class='description'><?php echo $row['description'] ?></p>
-		<?php if ($currentUser == $row['username']){
+		<?php if ($currentUser == $row['username'] or $adminLevel == 0){
 			print "<p class='edit'><a href='editItem.php?id=$id'>Edit</a></p>";}  ?>
 
 	</article>

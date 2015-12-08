@@ -58,7 +58,7 @@
 	</form>
 </section>
 <section class='content'>
-	<h3>Current Alerts:</h3>
+	<h2>Current Alerts:</h2>
 	<section class='alert-list'>
 	<?php $num = 1; foreach ($results as $row){?>
 		<article class='alert'>

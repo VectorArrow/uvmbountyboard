@@ -9,4 +9,7 @@
 		$results = $thisDatabaseReader->select($query, $data, $counts['where'], $counts['condition'], $counts['quote'], $counts['symbol'], false, false, true);
 	}else
 		$results = $thisDatabaseReader->select($query, "", $counts['where'], $counts['condition'], $counts['quote'], $counts['symbol'], false, false, true);//capitalized code so that table headers aren't chopped oddly if they aren't given aliases
+	$adminData = array( $username );
+	$adminQuery = 'SELECT accessLevel FROM Admins WHERE username=?';
+	$adminLevel = $thisDatabaseReader->select($adminQuery, "", 0);
 ?>

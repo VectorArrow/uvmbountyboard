@@ -56,6 +56,9 @@ header nav.main a{
 	display:flex;
 	flex-flow:column;
 }
+.content ~ .content{
+	border-top:1px solid #515152;
+}
 /** loast and found item list stuff */
 .items-list {
 	list-style:none;
