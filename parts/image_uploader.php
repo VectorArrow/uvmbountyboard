@@ -1,5 +1,5 @@
 <?php //Modified code from W3 School
-$target_dir = 'uploads/'.$username.'/'.$primaryKey.'/';
+$target_dir = 'uploads/'.$username.'/';
 if (!file_exists($target_dir)) {
     mkdir($target_dir, 0755, true);
 }
