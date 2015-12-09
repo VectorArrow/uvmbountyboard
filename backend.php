@@ -9,14 +9,23 @@
 	}
 	$tableName = htmlspecialchars($_GET['table']);
 	$whitelisted = (in_array($tableName,$validTables));
-	$query = 'SELECT * from ' . $tableName;
 	if ($whitelisted && $adminLevel[0][0] == 0):
+	if (isset($_POST['new'])){
+                $query = 'INSERT  INTO ' . $tableName . ' () VALUES ()';
+                $data = '';
+                $counts = countify($query);
+                $thisDatabaseWriter->insert($query, $data, $counts['where'], $counts['condition'], $counts['quote'], $counts['symbol'], true);
+		
+        }
+	$query = 'SELECT * from ' . $tableName;
 	include('parts/grunt_work.php');
+
 ?>
 <section class='admin content'>
 	<div class='table-wrap-x'>
         <div class='table-wrap-y'> <!-- this may seem insane, but need for sensical scrollbars on the table. -->
 	<h3><?php echo $tableName; ?></h3>
+	<form action='' method='post'><input type='submit' name='new' value='New Row'></input></form>	
         <table id='admin-table'>
                 <tr class='table-row'>
                  <?php
@@ -26,11 +35,9 @@
                 </tr>
         <?php foreach ($results as $row){?>
                 <tr class='table-row'>
-                <?php
-                foreach($row as $value):
-                        if (isset($value)){ ?>
+                <?php foreach($row as $value): ?>
                                 <td class='table-cell'><?php echo $value;?></td>
-                <?php } endforeach; ?>
+                <?php endforeach; ?>
 			<td><a href='editAny.php?table=<?php echo $tableName; ?>&key=<?php echo $row[array_keys($results[0])[0]]; ?>&keyname=<?php echo array_keys($results[0])[0]; ?>'>Edit</a></td>
                 </tr>
         <?php } ?>

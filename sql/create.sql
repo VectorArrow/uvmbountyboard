@@ -13,15 +13,17 @@ CREATE TABLE Users(
 CREATE TABLE Admins(
 	username varchar(255),
 	accessLevel int,
-	FOREIGN KEY (username) REFERENCES Users (username),
-	PRIMARY KEY (username));
+	PRIMARY KEY (username),
+	FOREIGN KEY (username) REFERENCES Users (username)
+	ON DELETE CASCADE ON UPDATE CASCADE);
 CREATE TABLE Alerts(
 	id int NOT NULL AUTO_INCREMENT,
 	username varchar(255) NOT NULL,
 	keywords varchar(255),
 	location varchar(255),
-	FOREIGN KEY (username) REFERENCES Users (username),
-	PRIMARY KEY  (id));
+	PRIMARY KEY (id),
+	FOREIGN KEY (username) REFERENCES Users (username)
+	 ON DELETE CASCADE ON UPDATE CASCADE);
 CREATE TABLE Items(
 	id int NOT NULL AUTO_INCREMENT,
 	username varchar(255),
@@ -34,7 +36,8 @@ CREATE TABLE Items(
 	status varchar(7),
 	image varchar(255),
 	PRIMARY KEY (id),
-	FOREIGN KEY (username) REFERENCES Users (username));
+	FOREIGN KEY (username) REFERENCES Users (username)
+	 ON DELETE CASCADE ON UPDATE CASCADE);
 CREATE TABLE Comments(
 	id int NOT NULL AUTO_INCREMENT,
 	itemsId int,
@@ -43,4 +46,5 @@ CREATE TABLE Comments(
 	commentParent int,
 	PRIMARY KEY (id),
 	FOREIGN KEY (itemsId) REFERENCES Items (id),
-	FOREIGN KEY (username) REFERENCES Users (username));
+	FOREIGN KEY (username) REFERENCES Users (username)
+	 ON DELETE CASCADE ON UPDATE CASCADE);

@@ -5,6 +5,7 @@
 <section class='content halves'>
 <form action='submitted.php' method='post' enctype="multipart/form-data">
 	<h2>Submit a Lost or Found Item</h2>
+	<p>Filling out this form for the first time will craete a new user. You will be able to edit your information on your profile page.</p>
 	<fieldset>
 		<p>
 		<label for='name'>Item Name:</label>
