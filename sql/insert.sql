@@ -1,6 +1,11 @@
 INSERT IGNORE INTO Users (username, nickname, email, dateCreated)
 VALUES ('swreinha', 'Samuel William Reinhardt', 'swr@outlook.com', NOW()),
-	('test','test user please delete me oh go why am i alive', 'test@test.com', NOW());
+	('test','test user please delete me oh go why am i alive', 'test@test.com', NOW()),
+	('rerickso','rerickso','rerickso@uvm.edu',NOW()),
+	('afdrisco', 'afdrisco','afdrisco@uvm.edu',NOW()),
+	('mcardoso','mcardoso','mcardoso@uvm.edu',NOW()),
+	('gsamsono', 'gsamsono','gsamsono@uvm.edu',NOW()),
+	('adatta','adatta','adatta@uvm.edu',NOW());
 INSERT IGNORE INTO Admins (username, accesslevel)
 VALUES ('swreinha', 0),
 ('rerickso', 0),
