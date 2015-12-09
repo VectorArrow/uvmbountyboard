@@ -7,7 +7,7 @@
 	$id = preg_replace("/[^0-9]/","",htmlspecialchars($_GET["id"]));
 	if ($id === "") $whitelisted = false;
 	if ($whitelisted):
-	$query = 'SELECT * from Items WHERE id='.$id;
+	$query = 'SELECT * from Items INNER JOIN Users ON Items.username=Users.username WHERE id='.$id;
 	include('parts/grunt_work.php');
 ?>
 <section class='content'>
@@ -15,8 +15,11 @@
 	<article class='item'>
 		<h3 class='<?php echo $row['status']; ?> name title'><?php echo $row['name']; ?></h3>
 		<div class='sub'>
-			<div class='location'><?php echo $row['location']; ?></div>
-			<div class='dateLost'><?php echo $row['dateLost'] ?></div>
+			<div class='auther'>Posted by: <?php echo $row['nickname']; ?></div>
+			<div class='contact'>Email: <?php echo $row['email']; ?></div>
+			<div class='location'>Location: <?php echo $row['location']; ?></div>
+			<div class='dateLost'>Date: <?php echo $row['dateLost'] ?></div>
+			
 		</div>
 		 <?php
                         $imagePath = 'uploads/'.$row['username']."/".$row['image'];

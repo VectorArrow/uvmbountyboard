@@ -4,9 +4,11 @@
 <main>
 <?php   
 	$validTables = array('Items', 'Users', 'Admins', 'Alerts');
-	foreach ($validTables as $tableref){
-		echo '<a href="backend.php?table=' . $tableref . '">' . $tableref . '</a>';
-	} 
+	echo '<nav class="admin-nav">';
+        foreach ($validTables as $tableref){
+                echo '<a href="backend.php?table=' . $tableref . '">' . $tableref . '</a>';
+        }
+	echo '</nav>';
 	$validkeyNames = array('id', 'username');
 
 	$tableName = htmlspecialchars($_GET['table']);

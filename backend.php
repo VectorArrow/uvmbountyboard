@@ -4,9 +4,11 @@
 <main>
 <?php   
 	$validTables = array('Items', 'Users', 'Admins', 'Alerts');
+	echo '<nav class="admin-nav">';
 	foreach ($validTables as $tableref){
 		echo '<a href="backend.php?table=' . $tableref . '">' . $tableref . '</a>';
 	}
+	echo '</nav>';
 	$tableName = htmlspecialchars($_GET['table']);
 	$whitelisted = (in_array($tableName,$validTables));
 	if ($whitelisted && $adminLevel[0][0] == 0):

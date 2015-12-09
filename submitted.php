@@ -7,10 +7,18 @@
 	$whitelisted = true;
 	if ($whitelisted):
 		if ($_POST['submit'] === 'edit_item' ):
+			$keywords = '';
+                        $keywords .= isset($_POST['Pets'])?$_POST['Pets']:'';
+                        $keywords .= isset($_POST['Phones'])?(','.$_POST['Phones']):'';
+                        $keywords .= isset($_POST['Bikes'])?(','.$_POST['Bikes']):'';
+                        $keywords .= isset($_POST['Clothing'])?(','.$_POST['Clothing']):'';
+                        $keywords .= isset($_POST['Other'])?(','.$_POST['Other']):'';
+                        $keywords = trim($keywords,',');
+
 			if($_FILES["image"]["name"] === ''){
 				$data = array(
 			               	htmlentities($_POST['name']),
-			               	htmlentities($_POST['category']),
+			               	htmlentities($keywords),
 			       		htmlentities($_POST['description']),
 			    		htmlentities($_POST['location']),
 					htmlentities($_POST['status']),
@@ -22,7 +30,7 @@
 			}else{
 				$data = array(
                                         htmlentities($_POST['name']),
-                                        htmlentities($_POST['category']),
+                                        htmlentities($keywords),
                                         htmlentities($_POST['description']),
                                         htmlentities($_POST['location']),
                                         htmlentities($_POST['status']),

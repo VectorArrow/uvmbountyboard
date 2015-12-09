@@ -33,14 +33,14 @@
 		<p>	
 		<label for='location'>Location:</label>
 			<select id='location' name='location'>
-				<option value='Athletic-Campus'>Athletic Campus</option>
-				<option value='Centennial-Field'>Centennial Field</option>
-				<option value='Central-Campus'>Central Campus</option>
-				<option value='East-Annex'>East Annex</option>
+				<option value='Athletic Campus'>Athletic Campus</option>
+				<option value='Centennial Field'>Centennial Field</option>
+				<option value='Central Campus'>Central Campus</option>
+				<option value='East Annex'>East Annex</option>
 				<option value='Medical'>Medical</option>
-				<option value='Redstone-Campus'>Redstone Campus</option>
-				<option value='University-Heights'>University Heights</option>
-				<option value='University-Green'>University Green</option>
+				<option value='Redstone Campus'>Redstone Campus</option>
+				<option value='University Heights'>University Heights</option>
+				<option value='University Green'>University Green</option>
 				<option value='Other'>Other</option>
 			</select>
 		</p>

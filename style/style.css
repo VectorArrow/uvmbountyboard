@@ -37,6 +37,10 @@ header h1{
 	display:inline-block;
 	font-size:27px;
 }
+header h1 a{
+	text-decoration:none;
+	color:white;
+}
 header nav.main ul{
 	padding:10px 0;
 	display:flex;
@@ -59,7 +63,7 @@ header nav.main a{
 .content ~ .content{
 	border-top:1px solid #515152;
 }
-/** loast and found item list stuff */
+/** lost and found item list stuff */
 .items-list {
 	list-style:none;
 	flex-flow: row wrap;
@@ -166,6 +170,15 @@ form button{
 form button:hover{
 	background:#BDF1B3;
 	box-shadow:inset 0px 0px 0px #BDF1B3, 0px 2px 0px 0px #7EAD74, 0px 2px 1px #BDBCBC;
+}
+/** admin stuff */
+nav.admin-nav {
+    margin: auto;
+    text-align:center;
+}
+nav.admin-nav a{
+    text-decoration:none;
+    padding:0 20px;
 }
 /** rotate classes */
 .rotate1{
