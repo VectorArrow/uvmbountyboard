@@ -19,7 +19,7 @@
 			<div class='contact'>Email: <?php echo $row['email']; ?></div>
 			<div class='location'>Location: <?php echo $row['location']; ?></div>
 			<div class='dateLost'>Date: <?php echo $row['dateLost'] ?></div>
-			
+
 		</div>
 		 <?php
                         $imagePath = 'uploads/'.$row['username']."/".$row['image'];
@@ -28,7 +28,7 @@
                 <img class='item-image' src='<?php echo $imagePath; ?>'>
                 <?php endif; ?>
 		<p class='description'><?php echo $row['description'] ?></p>
-		<?php if ($currentUser == $row['username'] or $adminLevel == 0){
+		<?php if ($username == $row['username'] or $adminLevel == 0){
 			print "<p class='edit'><a href='editItem.php?id=$id'>Edit</a></p>";
 		}  ?>
 	</article>
