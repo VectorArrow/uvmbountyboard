@@ -13,13 +13,21 @@
 <section class='content'>
 <?php foreach ($results as $row){?>
 	<article class='item'>
-		<h3 class='name title'><?php echo $row['name']; ?></h3>
-		<div class='location'><?php echo $row['location']; ?></div>
-		<div class='dateLost'><?php echo $row['dateLost'] ?></div>
+		<h3 class='<?php echo $row['status']; ?> name title'><?php echo $row['name']; ?></h3>
+		<div class='sub'>
+			<div class='location'><?php echo $row['location']; ?></div>
+			<div class='dateLost'><?php echo $row['dateLost'] ?></div>
+		</div>
+		 <?php
+                        $imagePath = 'uploads/'.$row['username']."/".$row['image'];
+                        if (file_exists($imagePath) && !empty($row['image'])):
+                ?>
+                <img class='item-image' src='<?php echo $imagePath; ?>'>
+                <?php endif; ?>
 		<p class='description'><?php echo $row['description'] ?></p>
 		<?php if ($currentUser == $row['username'] or $adminLevel == 0){
-			print "<p class='edit'><a href='editItem.php?id=$id'>Edit</a></p>";}  ?>
-
+			print "<p class='edit'><a href='editItem.php?id=$id'>Edit</a></p>";
+		}  ?>
 	</article>
 	<?php } ?>
 </section>

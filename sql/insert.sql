@@ -2,7 +2,7 @@ INSERT IGNORE INTO Users (username, nickname, email, dateCreated)
 VALUES ('swreinha', 'Samuel William Reinhardt', 'swr@outlook.com', NOW()),
 	('test','test user please delete me oh go why am i alive', 'test@test.com', NOW());
 INSERT IGNORE INTO Admins (username, accesslevel)
-VALUES ('swreinha', 0);
+VALUES ('swreinha', 1);
 INSERT IGNORE INTO Alerts (username, keywords, location)
 VALUES ('swreinha', 'phone', 'Central Campus');
 INSERT IGNORE INTO Items (username, name, dateCreated, dateLost, category, description, location, status, image)

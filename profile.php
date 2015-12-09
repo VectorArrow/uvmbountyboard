@@ -3,7 +3,6 @@
 <?php require_once('parts/header.php'); ?>
 <main>
 <?php
-
 	$whitelisted = true;
 	$query = 'SELECT * from Users WHERE username="'.$username.'"';
 	if ($whitelisted):
@@ -20,6 +19,9 @@
 			<p class='email'><?php echo $row['email']; ?></p>
 			<?php if ($currentUser == $row['username']):
 			print "<p class='edit'><a href='editProfile.php'>Edit</a></p>"; endif;?>
+			 <?php if ($adminLevel[0][0] == 0){ ?>
+                        <p class='admin'><a href='backend.php'>Admin Page</a></p>
+                	<?php }  ?>
 		</article>
 	<?php } ?>
 </section>

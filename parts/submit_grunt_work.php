@@ -1,8 +1,4 @@
 <?php
-	$dbUserName = get_current_user() . '_writer';
-	$whichPass = "w"; //flag for which one to use.
-	$dbName = strtoupper(get_current_user()) . '_bountyboard';
-	$thisDatabaseWriter = new Database($dbUserName, $whichPass, $dbName);
 	$query = rtrim($query,';'); //remove semicolon (alternatively, set allow semi to true in bob's function
 	$counts = countify($query);
 	$new_user_data = array($username,$username,$username.'@uvm.edu');

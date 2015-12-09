@@ -11,7 +11,19 @@
 
         <link rel='stylesheet' type="text/css" href='style/style.css'>
         <link href='https://fonts.googleapis.com/css?family=Indie+Flower|Cabin|Arvo|Josefin+Sans' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <?php $username = htmlentities($_SERVER["REMOTE_USER"], ENT_QUOTES, "UTF-8"); $page='';?>
 <?php $currentUser = get_current_user(); ?>
+<?php  
+	$dbUserName = get_current_user() . '_reader';
+        $whichPass = "r"; //flag for which one to use.
+        $dbName = strtoupper(get_current_user()) . '_bountyboard';
+        $thisDatabaseReader = new Database($dbUserName, $whichPass, $dbName);
+
+ 	$dbUserName = get_current_user() . '_writer';
+        $whichPass = "w"; //flag for which one to use.
+        $thisDatabaseWriter = new Database($dbUserName, $whichPass, $dbName);
+
+?>
+<?php include('parts/admin_test.php'); ?>
